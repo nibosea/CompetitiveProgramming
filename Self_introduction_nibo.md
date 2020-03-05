@@ -20,7 +20,7 @@ I am called "Niboshi"
 
 The following Link is my twitter account. 
 
-**[here](https://twitter.com/niboshi_wakai)**
+**[Twitter is here](https://twitter.com/niboshi_wakai)**
 
 
 
