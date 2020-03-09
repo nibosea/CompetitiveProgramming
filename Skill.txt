@@ -1,0 +1,27 @@
+セクキャンのエントリーシートに向けて、どういう困難を乗り越えていったかを書いていく。
+
+
+2020/01/18
+学校のjavaでゲームを作る課題で、
+ボタンを押したらゲームの説明のページを開くようにしたかった。
+ゲームの説明ページはhtmlで作ったので、javaからボタンを押したときにそのhtmlファイルを開くようにしたかったが、
+ファイルを読み込む方法は調べたら出てくるものも、なかなかファイルを開く記事というのを見つけることができなかった。
+ブラウザを開くという記事は早期に見つけていたが、そのやり方はwindowsでのやり方で、ubuntuではできなかった。
+ブラウザを開き、その起動時に引数としてhtmlのパスを与えれば開ける。ということを教わったのでその方法を模索した。
+結果的にはwindowsでのやり方を少し変えることで解決することができた。
+
+Ubuntuで動くコードをまとめると
+```java
+		void openRule(ActionEvent event) {
+			
+    try { 
+        //ブラウザを起動し、必要な URL を渡す 
+        String browserName = "google-chrome"; 
+        String url = "Introduction.html"; 
+        Runtime.getRuntime().exec(new String[ ] {browserName, url});
+    } catch (IOException ex) { 
+        ex.printStackTrace(); 
+    }
+```
+このようになる。起動するブラウザと、起動時に開くファイルのパスを引数として与えることで開ける。
+
